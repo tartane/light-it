@@ -1,6 +1,6 @@
-package com.ticlight;
+package com.lightit;
 
-import android.app.Activity;
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -27,8 +27,16 @@ public class LightActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_light);
         ButterKnife.bind(this);
+
+        ActionBar actionBar = getActionBar();
+
+        if(actionBar != null) {
+            actionBar.hide();
+        }
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         WindowManager.LayoutParams params = getWindow().getAttributes();
@@ -49,8 +57,8 @@ public class LightActivity extends FragmentActivity {
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, R.color.black));
-                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, R.color.black));
+                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
+                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
                     return LightFragment.newInstance(false);
                 case 1:
                     LightFragment frag = LightFragment.newInstance(true);
@@ -59,16 +67,16 @@ public class LightActivity extends FragmentActivity {
                         public void onLightChange(boolean lightActived) {
                             if(mPager.getCurrentItem() == 1) {
                                 if (lightActived) {
-                                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, R.color.black));
-                                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, R.color.black));
+                                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
+                                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
                                 }
                                 else {
-                                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, R.color.white));
-                                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, R.color.white));
+                                    mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, android.R.color.white));
+                                    mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, android.R.color.white));
                                 }
                             } else {
-                                mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, R.color.black));
-                                mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, R.color.black));
+                                mCircleIndicator.setFillColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
+                                mCircleIndicator.setStrokeColor(ContextCompat.getColor(LightActivity.this, android.R.color.black));
                             }
                         }
                     });

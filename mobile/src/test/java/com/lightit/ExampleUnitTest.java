@@ -1,4 +1,4 @@
-package com.ticlight;
+package com.lightit;
 
 import org.junit.Test;
 

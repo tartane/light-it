@@ -1,4 +1,4 @@
-package com.ticlight;
+package com.lightit;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,6 +50,13 @@ public class LightFragment extends Fragment {
         ButterKnife.bind(this, view);
         if (getArguments() != null) {
             mBlink = getArguments().getBoolean(ARG_BLINK);
+            /*
+            if(mBlink) {
+
+                handler = new Handler();
+
+                handler.postDelayed(runnable, delay);
+            }*/
         }
         return view;
     }

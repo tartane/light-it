@@ -1,4 +1,4 @@
-package com.ticlight;
+package com.lightit;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

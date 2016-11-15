@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">TicLight</string>
+    <string name="app_name">LightIt</string>
 
     <string name="title_activity_light">LightActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
